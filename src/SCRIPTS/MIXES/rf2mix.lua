@@ -146,7 +146,7 @@ local RFSensors = {
     -- ESC current
     [0x0042]  = { name="EscI",    unit=UNIT_AMPS,                prec=2,    dec=decU16  },
     -- ESC capacity/consumption
-    [0x0043]  = { name="EscC",    unit=UNIT_MAH,                 prec=3,    dec=decU16  },
+    [0x0043]  = { name="EscC",    unit=UNIT_MAH,                 prec=0,    dec=decU16  },
     -- ESC eRPM
     [0x0044]  = { name="EscR",    unit=UNIT_RPMS,                prec=0,    dec=decU16  },
     -- ESC PWM/Power
