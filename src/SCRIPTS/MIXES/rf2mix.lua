@@ -281,7 +281,7 @@ local function crossfirePop()
     if command and data then
         if command == CRSF_FRAME_CUSTOM_TELEM then
             local sid, val
-            local ptr = 1
+            local ptr = 3
             while ptr <= #data - 2 do
                 sid,ptr = decU16(data, ptr)
                 local sensor = RFSensors[sid]
