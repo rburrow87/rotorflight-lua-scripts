@@ -109,6 +109,15 @@ local function decLatLong(data, pos)
     return nil, pos
 end
 
+local function decAdjFunc(data, pos)
+    local fun,val
+    fun,pos = decU16(data,pos)
+    val,pos = decS32(data,pos)
+    setTelemetryValue(0x0220, 0, 0, fun, UNIT_RAW, 0, "AdjF")
+    setTelemetryValue(0x0220, 1, 0, val, UNIT_RAW, 0, "AdjV")
+    return nil, pos
+end
+
 
 local RFSensors = {
     -- Heartbeat (millisecond uptime % 60000)
@@ -264,6 +273,9 @@ local RFSensors = {
     [0x0212]  = { name="RTE#",    unit=UNIT_RAW,                 prec=0,    dec=decU8   },
     -- Current LED profile
     [0x0213]  = { name="LED#",    unit=UNIT_RAW,                 prec=0,    dec=decU8   },
+
+    -- Adjustment function
+    [0x0220]  = { name="ADJ ",    unit=UNIT_RAW,                 prec=0,    dec=decAdjFunc },
 
     -- Debug
     [0xFE00]  = { name="DBG0",    unit=UNIT_RAW,                 prec=0,    dec=decS32  },
