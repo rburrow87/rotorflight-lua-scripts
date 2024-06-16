@@ -148,7 +148,7 @@ local RFSensors = {
     -- Collective Control angle
     [0x0034]  = { name="CCol",    unit=UNIT_DEGREE,              prec=1,    dec=decS16  },
     -- Throttle output %
-    [0x0035]  = { name="Thr ",    unit=UNIT_PERCENT,             prec=0,    dec=decS8   },
+    [0x0035]  = { name="Thr",     unit=UNIT_PERCENT,             prec=0,    dec=decS8   },
 
     -- ESC voltage
     [0x0041]  = { name="EscV",    unit=UNIT_VOLTS,               prec=2,    dec=decU16  },
@@ -199,11 +199,11 @@ local RFSensors = {
     [0x00A3]  = { name="Tmcu",    unit=UNIT_CELSIUS,             prec=0,    dec=decU8   },
 
     -- Heading (combined gyro+mag+GPS)
-    [0x00B1]  = { name="Hdg ",    unit=UNIT_DEGREE,              prec=1,    dec=decS16  },
+    [0x00B1]  = { name="Hdg",     unit=UNIT_DEGREE,              prec=1,    dec=decS16  },
     -- Altitude (combined baro+GPS)
-    [0x00B2]  = { name="Alt ",    unit=UNIT_METERS,              prec=2,    dec=decS24  },
+    [0x00B2]  = { name="Alt",     unit=UNIT_METERS,              prec=2,    dec=decS24  },
     -- Variometer (combined baro+GPS)
-    [0x00B3]  = { name="Var ",    unit=UNIT_METERS_PER_SECOND,   prec=2,    dec=decS16  },
+    [0x00B3]  = { name="Var",     unit=UNIT_METERS_PER_SECOND,   prec=2,    dec=decS16  },
 
     -- Headspeed
     [0x00C0]  = { name="Hspd",    unit=UNIT_RPMS,                prec=0,    dec=decU16  },
@@ -217,7 +217,7 @@ local RFSensors = {
     -- Attitude roll
     [0x0102]  = { name="Roll",    unit=UNIT_DEGREE,              prec=0,    dec=decS16  },
     -- Attitude yaw
-    [0x0103]  = { name="Yaw ",    unit=UNIT_DEGREE,              prec=0,    dec=decS16  },
+    [0x0103]  = { name="Yaw",     unit=UNIT_DEGREE,              prec=0,    dec=decS16  },
 
     -- Acceleration (hires combined)
     [0x0110]  = { name="Accl",    unit=UNIT_G,                   prec=2,    dec=decAccel },
@@ -237,7 +237,7 @@ local RFSensors = {
     -- GPS VDOP
     [0x0124]  = { name="VDOP",    unit=UNIT_RAW,                 prec=0,    dec=decU8   },
     -- GPS Coordinates
-    [0x0125]  = { name="GPS ",    unit=UNIT_RAW,                 prec=0,    dec=decLatLong },
+    [0x0125]  = { name="GPS",     unit=UNIT_RAW,                 prec=0,    dec=decLatLong },
     -- GPS altitude
     [0x0126]  = { name="GAlt",    unit=UNIT_METERS,              prec=1,    dec=decS16  },
     -- GPS heading
@@ -254,18 +254,18 @@ local RFSensors = {
     -- System load
     [0x0142]  = { name="SYS%",    unit=UNIT_PERCENT,             prec=0,    dec=decU8  },
     -- Realtime CPU load
-    [0x0143]  = { name="RT% ",    unit=UNIT_PERCENT,             prec=0,    dec=decU8  },
+    [0x0143]  = { name="RT%",     unit=UNIT_PERCENT,             prec=0,    dec=decU8  },
 
     -- Model ID
     [0x0200]  = { name="MDL#",    unit=UNIT_RAW,                 prec=0,    dec=decU8   },
     -- Flight mode flags
     [0x0201]  = { name="Mode",    unit=UNIT_RAW,                 prec=0,    dec=decU32  },
     -- Arming disable flags
-    [0x0202]  = { name="ARM ",    unit=UNIT_RAW,                 prec=0,    dec=decU32  },
+    [0x0202]  = { name="ARM",     unit=UNIT_RAW,                 prec=0,    dec=decU32  },
     -- Rescue state
     [0x0203]  = { name="Resc",    unit=UNIT_RAW,                 prec=0,    dec=decU8   },
     -- Governor state
-    [0x0204]  = { name="Gov ",    unit=UNIT_RAW,                 prec=0,    dec=decU8   },
+    [0x0204]  = { name="Gov",     unit=UNIT_RAW,                 prec=0,    dec=decU8   },
 
     -- Current PID profile
     [0x0211]  = { name="PID#",    unit=UNIT_RAW,                 prec=0,    dec=decU8   },
@@ -275,7 +275,7 @@ local RFSensors = {
     [0x0213]  = { name="LED#",    unit=UNIT_RAW,                 prec=0,    dec=decU8   },
 
     -- Adjustment function
-    [0x0220]  = { name="ADJ ",    unit=UNIT_RAW,                 prec=0,    dec=decAdjFunc },
+    [0x0220]  = { name="ADJ",     unit=UNIT_RAW,                 prec=0,    dec=decAdjFunc },
 
     -- Debug
     [0xFE00]  = { name="DBG0",    unit=UNIT_RAW,                 prec=0,    dec=decS32  },
