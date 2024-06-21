@@ -113,8 +113,8 @@ local function decAdjFunc(data, pos)
     local fun,val
     fun,pos = decU16(data,pos)
     val,pos = decS32(data,pos)
-    setTelemetryValue(0x0220, 0, 0, fun, UNIT_RAW, 0, "AdjF")
-    setTelemetryValue(0x0220, 1, 0, val, UNIT_RAW, 0, "AdjV")
+    setTelemetryValue(0x0221, 0, 0, fun, UNIT_RAW, 0, "AdjF")
+    setTelemetryValue(0x0222, 0, 0, val, UNIT_RAW, 0, "AdjV")
     return nil, pos
 end
 
