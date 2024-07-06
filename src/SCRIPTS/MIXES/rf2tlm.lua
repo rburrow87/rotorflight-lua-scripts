@@ -288,12 +288,23 @@ local RFSensors = {
     [0xFE07]  = { name="DBG7",    unit=UNIT_RAW,                 prec=0,    dec=decS32  },
 }
 
+local telemetryFrameId = 0
+local telemetryFrameSkip = 0
+local telemetryFrameCount = 0
+
 local function crossfirePop()
     local command, data = crossfireTelemetryPop()
     if command and data then
         if command == CRSF_FRAME_CUSTOM_TELEM then
-            local sid, val
+            local fid, sid, val
             local ptr = 3
+            fid,ptr = decU8(data, ptr)
+            local delta = bit32.band(fid - telemetryFrameId, 0xFF)
+            if delta > 1 then
+                telemetryFrameSkip = telemetryFrameSkip + 1
+            end
+            telemetryFrameId = fid
+            telemetryFrameCount = telemetryFrameCount + 1
             while ptr < #data do
                 sid,ptr = decU16(data, ptr)
                 local sensor = RFSensors[sid]
@@ -306,6 +317,8 @@ local function crossfirePop()
                     break
                 end
             end
+            setTelemetryValue(0xFE11, 0, 0, telemetryFrameCount, UNIT_RAW, 0, "TCnt")
+            setTelemetryValue(0xFE12, 0, 0, telemetryFrameSkip, UNIT_RAW, 0, "TSkp")
         end
         return true
     end
