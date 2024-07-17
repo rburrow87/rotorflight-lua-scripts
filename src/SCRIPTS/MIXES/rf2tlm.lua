@@ -146,7 +146,7 @@ local RFSensors = {
     -- Main battery cell count
     [0x0020]  = { name="Cel#",    unit=UNIT_RAW,                 prec=0,    dec=decU8   },
     -- Main battery cell voltage (minimum/average)
-    [0x0020]  = { name="Vcel",    unit=UNIT_VOLTS,               prec=2,    dec=decCellV },
+    [0x0021]  = { name="Vcel",    unit=UNIT_VOLTS,               prec=2,    dec=decCellV },
     -- Main battery cell voltages
     [0x002F]  = { name="Cels",    unit=UNIT_VOLTS,               prec=2,    dec=decCells },
 
