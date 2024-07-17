@@ -5,6 +5,10 @@
 local CRSF_FRAME_CUSTOM_TELEM   = 0x88
 
 
+local function decNil(data, pos)
+    return nil, pos
+end
+
 local function decU8(data, pos)
     return data[pos], pos+1
 end
@@ -125,6 +129,8 @@ end
 
 
 local RFSensors = {
+    -- No data
+    [0x0000]  = { name="NULL",    unit=UNIT_RAW,                 prec=0,    dec=decNil  },
     -- Heartbeat (millisecond uptime % 60000)
     [0x0001]  = { name="BEAT",    unit=UNIT_RAW,                 prec=0,    dec=decU16  },
 
