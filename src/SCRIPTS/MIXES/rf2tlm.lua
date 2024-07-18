@@ -70,7 +70,7 @@ local function decCells(data, pos)
         val,pos = decU8(data,pos)
         val = val > 0 and val + 200 or 0
         vol = bit32.lshift(cnt,24) + bit32.lshift(i-1, 16) + val
-        setTelemetryValue(0x0021, 0, 0, vol, UNIT_CELLS, 2, "Cels")
+        setTelemetryValue(0x002F, 0, 0, vol, UNIT_CELLS, 2, "Cels")
     end
     return nil, pos
 end
