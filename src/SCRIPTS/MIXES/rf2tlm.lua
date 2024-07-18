@@ -334,8 +334,8 @@ local function crossfirePop()
                     break
                 end
             end
-            setTelemetryValue(0xFE11, 0, 0, telemetryFrameCount, UNIT_RAW, 0, "*Cnt")
-            setTelemetryValue(0xFE12, 0, 0, telemetryFrameSkip, UNIT_RAW, 0, "*Skp")
+            setTelemetryValue(0xFF01, 0, 0, telemetryFrameCount, UNIT_RAW, 0, "*Cnt")
+            setTelemetryValue(0xFF02, 0, 0, telemetryFrameSkip, UNIT_RAW, 0, "*Skp")
         end
         return true
     end
